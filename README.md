@@ -47,8 +47,39 @@ Reconnaissance is the phase in which an attacker gathers intelligence about thei
 I’m going to look for event logs in the index `botsv1` containing the term `imreallynotbatman.com`.
 
 **Search Query:**
-`index=botsv1 imreallynotbatman.com`
+```splunk
+index=botsv1 imreallynotbatman.com
+```
 
 <img width="1125" height="638" alt="image" src="https://github.com/user-attachments/assets/60e984a6-085a-467e-8b1f-262b7101ab89" />
+
+I found four log sources in the sourcetype field, which are:
+* `suricata`
+* `stream:http`
+* `fortigate:utm`
+* `iis`
+
+### Step 2: Initial Source Identification
+Here I’ll be filtering `stream:http` logs for the domain `imreallynotbatman.com` to isolate and identify the source IP address involved in the initial reconnaissance. 
+
+**Search Query:**
+```splunk
+index=botsv1 imreallynotbatman.com sourcetype=stream:http
+```
+<img width="1073" height="562" alt="image" src="https://github.com/user-attachments/assets/4cf646af-b8eb-4849-948f-32ca544850b8" />
+
+As we can see, I found two IPs in the `src_ip` field `40.80.148.42` and `23.22.63.114`. The first IP has a higher percentage which is 93.4% and most likely I have found the attacker. But I want to go further to see if my suspicion is right. 
+
+### Step 3: Validating Reconnaissance via Alert Signature
+
+**Search Query:**
+```splunk
+index=botsv1 imreallynotbatman.com src=40.80.148.42 sourcetype=suricata
+```
+<img width="1125" height="463" alt="image" src="https://github.com/user-attachments/assets/64decfad-90d1-49ae-9305-d954d6929fba" />
+
+This query filters the suricata logs for the IP `40.80.148.42` that I was suspecting to have malicious intent. After analyzing the alert.signature field, the CVE Identifiers confirm that very IP as the source of exploit attempts. 
+
+
 
 
