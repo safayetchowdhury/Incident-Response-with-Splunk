@@ -1,4 +1,4 @@
-# Incident Handling and Forensic Analysis with Splunk
+# Incident Response with Splunk
 
 ## Project Overview
 Welcome! This lab demonstrates the use of Splunk for incident handling and forensic analysis within a real-world scenario. The investigation focuses on a targeted attack and subsequent defacement of the imreallynotbatman.com web server. By mapping the adversary's movements to the 7 phases of the Cyber Kill Chain, I’ve reconstructed the attack lifecycle by leveraging advanced Splunk SPL queries and OSINT intelligence (via VirusTotal and Robtex) to unmask the infrastructure behind the breach.
@@ -35,7 +35,6 @@ I’ll talk a little about 7 phases of the Cyber Kill Chain here before we begin
 6. Command & Control
 7. Actions on Objectives
 <img width="1193" height="684" alt="image" src="https://github.com/user-attachments/assets/46ab0c8d-8b1f-43a4-ab6b-2db1f226f93b" />
----
 
 > [!NOTE]
 > Please note that it isn’t necessary to follow this sequence of the phases while investigating. Let’s dive in!
