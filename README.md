@@ -400,7 +400,10 @@ This investigation highlights the importance of **multi-layered visibility**. By
 
 What started as a simple brute-force entry ended in a full-scale defacement. I successfully unmasked the **Poison Ivy** group as the culprit, exposing a sophisticated web of pre-staged infrastructure and secondary malware that proved their intentions went far beyond a single hacked homepage. 
 
-**Thank you for following along!** This lab is part of my ongoing commitment to mastering incident response and forensic analysis. I’m constantly adding new labs and documentation—check back soon for upcoming projects!
+**Connect & Explore:**
+* **GitHub:** Thank you for following along! This lab is part of my ongoing commitment to mastering incident response and forensic analysis. I’m constantly adding new labs and documentation—check back soon for upcoming projects! Check out my other work, including my [**SQL-Based Security Incident Investigation**](https://github.com/safayetchowdhury/SQL-based-Security-Incident-Investigation) project.
+* **LinkedIn:** I’d love to **[connect](https://www.linkedin.com/in/chowdhurysafayet/)**! If you’re working in information security or are interested in these methodologies, let's discuss how we can improve security posture together.
+
 
 
 
